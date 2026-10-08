@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{min-height:100%;width:100%;font-family:'Inter',sans-serif}
+body{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at top left,#dcfce7 0,#f8fafc 38%,#eef2ff 100%);color:#172033;overflow-x:hidden}
+body:before{content:'';position:fixed;width:360px;height:360px;border-radius:50%;background:rgba(14,165,164,.12);filter:blur(5px);right:-120px;top:-120px;pointer-events:none}
+body:after{content:'';position:fixed;width:300px;height:300px;border-radius:50%;background:rgba(34,197,94,.10);filter:blur(10px);left:-130px;bottom:-130px;pointer-events:none}
+.wrapper{position:relative;width:min(100%,470px);background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.8);border-radius:24px;padding:28px;box-shadow:0 30px 70px rgba(15,23,42,.13);backdrop-filter:blur(18px);overflow:hidden}
+.title-text{display:flex;width:200%;font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;margin-bottom:24px;transition:all .45s ease}
+.title{width:50%;text-align:center}
+.form-container{overflow:hidden}
+.slide-controls{height:48px;width:100%;display:flex;position:relative;margin-bottom:22px;background:#f1f5f9;border-radius:12px;padding:4px}
+.slide-controls input{display:none}
+.slide-controls label{width:50%;height:40px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;font-size:14px;font-weight:700;color:#64748b;border-radius:9px;transition:.25s}
+.slider-tab{position:absolute;left:4px;top:4px;width:calc(50% - 4px);height:40px;background:#fff;border-radius:9px;box-shadow:0 4px 12px rgba(15,23,42,.08);transition:.35s}
+#signup:checked~.slider-tab{left:50%}
+#signup:checked~label.signup,#login:checked~label.login{color:#15803d}
+.form-inner{display:flex;width:200%;transition:all .45s ease}
+.form-inner form{width:50%;padding-right:4px}
+.field{height:50px;width:100%;margin:12px 0}
+.field input{height:100%;width:100%;outline:none;border:1px solid #dbe2ea;border-radius:11px;padding:0 14px;font-size:14px;color:#172033;background:#fff;transition:.25s}
+.field input:focus{border-color:#86efac;box-shadow:0 0 0 4px rgba(34,197,94,.10)}
+.field input::placeholder{color:#94a3b8}
+.pass-link,.signup-link{font-size:13px;color:#64748b;margin:9px 0}.pass-link a,.signup-link a{color:#15803d;font-weight:700}.pass-link a:hover,.signup-link a:hover{text-decoration:underline}
+form .btn{height:50px;margin-top:18px;position:relative;overflow:hidden;border-radius:11px}
+form .btn .btn-layer{position:absolute;inset:0;background:linear-gradient(135deg,#16a34a,#0f766e);transition:.3s}
+form .btn input[type=submit]{position:relative;z-index:2;height:100%;width:100%;border:0;background:transparent;color:#fff;font-size:14px;font-weight:800;cursor:pointer}
+form p,form b{display:block;color:#dc2626;font-size:12px;line-height:1.5;margin-bottom:8px}
+@media(max-width:520px){body{padding:14px}.wrapper{padding:22px 18px;border-radius:20px}.title-text{font-size:22px}}
