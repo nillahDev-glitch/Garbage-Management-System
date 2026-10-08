@@ -295,57 +295,11 @@ User
      └── Access available services
 ```
 
-Use the credentials provided by the database seed/demo data if available.
 
 If your version does not include demo credentials, create an account through the registration functionality or insert a test account into the database according to the application's authentication schema.
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots of your application here after uploading them to the repository.
-
-Recommended screenshots:
-
-### Dashboard
-
-```text
-docs/screenshots/dashboard.png
-```
-
-### Login
-
-```text
-docs/screenshots/login.png
-```
-
-### User Dashboard
-
-```text
-docs/screenshots/user-dashboard.png
-```
-
-### Driver Dashboard
-
-```text
-docs/screenshots/driver-dashboard.png
-```
-
-### Admin Management
-
-```text
-docs/screenshots/admin-management.png
-```
-
-Example Markdown:
-
-```md
-![Dashboard](docs/screenshots/dashboard.png)
-```
-
-A strong GitHub repository should ideally include **4–6 high-quality screenshots** showing the most important parts of the system.
-
----
 
 # 🎯 Project Objectives
 
@@ -542,7 +496,7 @@ Click **Fork** on GitHub.
 ### 2. Clone your fork
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Garbage-Management-System.git
+git clone https://github.com/nillahDev-glitch/Garbage-Management-System.git
 ```
 
 ### 3. Create a feature branch
@@ -589,22 +543,11 @@ security: improve password handling
 
 ---
 
-# 📄 License
-
-This project can be released under the **MIT License** if you want it to be open-source and reusable.
-
-Add a `LICENSE` file containing the appropriate MIT License text before publishing.
-
-If this is an academic project or contains code/assets that you do not own, verify the applicable licensing terms before choosing a license.
-
----
 
 # 👨‍💻 Author
 
 **Godwin Nilla**
-
-Computer Science  
-Arusha Technical College  
+  
 Tanzania 🇹🇿
 
 ---
@@ -656,45 +599,3 @@ computer-science
 ```
 '''
 
-with open(os.path.join(root, "README.md"), "w", encoding="utf-8") as f:
-    f.write(readme)
-
-# Add a simple GitHub-friendly .gitignore if one doesn't exist
-gitignore = """# Environment / secrets
-.env
-.env.*
-!.env.example
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# PHP
-vendor/
-
-# Local server files
-xampp/
-"""
-if not os.path.exists(os.path.join(root, ".gitignore")):
-    with open(os.path.join(root, ".gitignore"), "w", encoding="utf-8") as f:
-        f.write(gitignore)
-
-# Repack with a clean root folder
-if os.path.exists(out):
-    os.remove(out)
-with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-    for base, dirs, files in os.walk(work):
-        for name in files:
-            path = os.path.join(base, name)
-            arc = os.path.relpath(path, work)
-            z.write(path, arc)
-
-print(f"Created GitHub-ready project package:\n{out}")
-print(f"README size: {os.path.getsize(os.path.join(root, 'README.md')):,} bytes")
